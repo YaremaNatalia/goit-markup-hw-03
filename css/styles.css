@@ -1,4 +1,6 @@
 :root {
+  --card-set-gap: 24px;
+
   --main-text-color: #2e2f42;
   --second-text-color: #434455;
   --hover-link-color: #404bbf;
@@ -12,6 +14,8 @@
   --btn-background-color: #4d5ae5;
   --hover-background-color: #404bbf;
   --dark-background-color: #2e2f42;
+
+  --border-color: #e7e9fc;
 }
 
 *,
@@ -141,7 +145,7 @@ body {
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #e7e9fc;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header-container {
@@ -233,19 +237,16 @@ body {
 
 .preferences-list {
   display: flex;
-  gap: 24px;
+  margin-left: calc(-1 * var(--card-set-gap));
 }
 .preferences .item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 264px;
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
 }
 
 .preferences-text {
   color: var(--second-text-color);
+  margin-top: 8px;
 }
 
 /* -----------WORK----------- */
@@ -260,10 +261,10 @@ body {
 
 .work-list {
   display: flex;
-  gap: 24px;
+  gap: var(--card-set-gap);
 }
 .work-list .item {
-  width: calc((100% - 48px) / 3);
+  width: calc((100% - (2 * var(--card-set-gap))) / 3);
 }
 
 /* -----------TEAM----------- */
@@ -278,13 +279,12 @@ body {
 
 .team-list {
   display: flex;
-  gap: 24px;
-
+  margin-left: calc(-1 * var(--card-set-gap));
 }
 
 .team-list > .item {
-
-  width: calc((100% - 72px) / 4);
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -333,7 +333,7 @@ body {
 
 .filter-list {
   display: flex;
-  gap: 24px;
+  gap: var(--card-set-gap);
   margin-bottom: 72px;
   margin-right: auto;
   margin-left: auto;
@@ -350,7 +350,7 @@ body {
   line-height: 1.5;
   color: var(--logo-brand-color);
   background-color: var(--second-background-color);
-  border: 1px solid var(--footer-text-color);
+  border: 1px solid var(--border-color);
 }
 
 .filter-list .btn:hover,
@@ -364,24 +364,23 @@ body {
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 48px;
+  column-gap: var(--card-set-gap);
+  row-gap: calc(2 * var(--card-set-gap));
 }
 
 .portfolio-list > .item {
-  width: calc((100% - 48px) / 3);
+  width: calc((100% - (2 * var(--card-set-gap))) / 3);
   background-color: var(--main-background-color);
-
 }
 
 .text-wrap {
-  padding: 32px 54px 32px 16px;
-  border: 1px solid #e7e9fc;
+  padding: 32px 53px 32px 15px;
+  border: 1px solid var(--border-color);
   border-top: 0;
 }
 
 .portfolio-subtitle {
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .portfolio-type {
